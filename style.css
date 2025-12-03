@@ -40,8 +40,6 @@
   margin: 10px auto;
   max-width: 300px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
 }
 
 .problem input {
@@ -70,7 +68,6 @@
   border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center; /* Centrar el contenido */
   gap: 10px; /* Espacio entre el icono y el texto */
 }
