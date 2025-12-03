@@ -36,7 +36,7 @@ $(document).ready(function () {
       let x = generateIntegerX(level);
       let y = generateIntegerY(level);
       let correctAnswer = x * y;
-      problems.push({ x, y, correctAnswer, attempts: 3 });
+      problems.push({ x, y, correctAnswer });
     }
   }
 
@@ -101,17 +101,12 @@ $(document).ready(function () {
 
   // Manejar respuesta incorrecta
   function handleIncorrectAnswer(problem, userAnswer) {
-    problem.attempts--;
-    if (problem.attempts > 0) {
-      alert("❌ Error. Intenta de nuevo.");
-    } else {
       operationsList.push({
         text: `${problem.x} x ${problem.y} = ${userAnswer} (Correcta: ${problem.correctAnswer})`,
         correct: false
       });
       currentProblem++;
       showProblem();
-    }
   }
 
   // Actualizar la lista de operaciones
