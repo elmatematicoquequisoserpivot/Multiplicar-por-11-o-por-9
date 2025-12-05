@@ -9,7 +9,7 @@ $(document).ready(function () {
   // Iniciar el juego al hacer clic en el botón "Start"
   $("#start").click(function () {
     let level = parseInt($("#level").val());
-    if (level >= 1 && level <= 4) {  // Poner aquí número de niveles
+    if (level >= 1 && level <= 5) {  // Poner aquí número de niveles
       resetGame();
       startTimer();
       generateProblems(level);
@@ -46,6 +46,7 @@ $(document).ready(function () {
     if (level === 2) return Math.floor(Math.random() * 90) + 10;
     if (level === 3) return Math.floor(Math.random() * 9) + 1;
     if (level === 4) return Math.floor(Math.random() * 90) + 10;
+    if (level === 5) return Math.floor(Math.random() * 80) + 10;
   }
   // 2º NÚMERO: Generar números enteros según el nivel
   function generateIntegerY(level) {
@@ -53,6 +54,12 @@ $(document).ready(function () {
     if (level === 2) return 11;
     if (level === 3) return 9;
     if (level === 4) return 9;
+    if (level === 5) {
+      let Operacionaleatoria = Math.floor(Math.random() * 2) + 1; //Elige operación aleatoria
+      if (Operacionaleatoria === 1) {return 11}
+      if (Operacionaleatoria === 2) {return 9}
+    }
+      
   }
 
   // Mostrar el problema actual
