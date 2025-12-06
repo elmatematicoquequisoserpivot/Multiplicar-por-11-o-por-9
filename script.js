@@ -79,7 +79,7 @@ $(document).ready(function () {
       </div>
     `) 
     $("#answer").focus();
-
+$('#answer').inputpicker({});
     // Manejar la respuesta del usuario
     $("#submit").click(function () {
       let userAnswer = parseInt($("#answer").val());
