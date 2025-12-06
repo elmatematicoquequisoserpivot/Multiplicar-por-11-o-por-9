@@ -79,9 +79,9 @@ $(document).ready(function () {
       </div>
     `) 
     $("#answer").focus();
-$('#answer').inputpicker({});
+
     // Manejar la respuesta del usuario
-    $("#submit").click(function () {
+   $("#submit").on("click", function() {
       let userAnswer = parseInt($("#answer").val());
       if (userAnswer === problem.correctAnswer) {
         handleCorrectAnswer(problem);
