@@ -74,11 +74,10 @@ $(document).ready(function () {
     $("#problems").html(`
       <div class="problemStyle">
         <p class="h4">${problem.x} x ${problem.y} = </p>
-        <input type="number" id="answer" class="form-control" placeholder="Tu respuesta" inputmode="numeric">
+        <input type="number" id="answer" class="form-control text-center" placeholder="Tu respuesta" inputmode="numeric">
         <button id="submit" class="btn btn-success mt-2">Enviar</button>
       </div>
-    `)
-    $("#answer").inputpicker(); 
+    `) 
     $("#answer").focus();
 
     // Manejar la respuesta del usuario
