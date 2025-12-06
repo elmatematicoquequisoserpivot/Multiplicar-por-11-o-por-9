@@ -84,6 +84,7 @@ $(document).ready(function () {
 
     // Manejar la respuesta del usuario
  $("#problemForm").on("submit", function(e) {
+   event.preventDefault();
       let userAnswer = parseInt($("#answer").val());
       if (userAnswer === problem.correctAnswer) {
         handleCorrectAnswer(problem);
