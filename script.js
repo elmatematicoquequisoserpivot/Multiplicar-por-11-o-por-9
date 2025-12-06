@@ -77,7 +77,8 @@ $(document).ready(function () {
         <input type="number" id="answer" class="form-control" placeholder="Tu respuesta" inputmode="numeric">
         <button id="submit" class="btn btn-success mt-2">Enviar</button>
       </div>
-    `);
+    `)
+    $("#answer").inputpicker(); 
     $("#answer").focus();
 
     // Manejar la respuesta del usuario
