@@ -72,7 +72,7 @@ $(document).ready(function () {
     updateProgressBar();
     let problem = problems[currentProblem];
     $("#problems").html(`
-      <div class="problem">
+      <div class="problemStyle">
         <p class="h4">${problem.x} x ${problem.y} = </p>
         <input type="number" id="answer" class="form-control" placeholder="Tu respuesta" inputmode="numeric">
         <button id="submit" class="btn btn-success mt-2">Enviar</button>
