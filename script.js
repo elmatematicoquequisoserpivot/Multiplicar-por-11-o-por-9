@@ -32,34 +32,31 @@ $(document).ready(function () {
 
   // Generar problemas según el nivel seleccionado
   function generateProblems(level) {
+    var aleatorio = level;
     for (let i = 0; i < 5; i++) {     // Poner aquí número de operaciones
+     if (aleatorio === 5)
+      {  level = (Math.floor(Math.random() * 2) + 1)*2  }; // Termino multiplicando por 2 para que aleatorice 2 o 4
       let x = generateIntegerX(level);
       let y = generateIntegerY(level);
       let correctAnswer = x * y;
       problems.push({ x, y, correctAnswer });
-    }
+    }  
   }
 
   // 1º NÚMERO: Generar números enteros según el nivel
   function generateIntegerX(level) {
     if (level === 1) return Math.floor(Math.random() * 9) + 1;
-    if (level === 2) return Math.floor(Math.random() * 90) + 10;
+    if (level === 2) return Math.floor(Math.random() * 80) + 10;
     if (level === 3) return Math.floor(Math.random() * 9) + 1;
-    if (level === 4) return Math.floor(Math.random() * 90) + 10;
-    if (level === 5) return Math.floor(Math.random() * 80) + 10;
+    if (level === 4) return Math.floor(Math.random() * 80) + 10;
   }
+  
   // 2º NÚMERO: Generar números enteros según el nivel
   function generateIntegerY(level) {
     if (level === 1) return 11;
     if (level === 2) return 11;
     if (level === 3) return 9;
-    if (level === 4) return 9;
-    if (level === 5) {
-      let Operacionaleatoria = Math.floor(Math.random() * 2) + 1; //Elige operación aleatoria
-      if (Operacionaleatoria === 1) {return 11}
-      if (Operacionaleatoria === 2) {return 9}
-    }
-      
+    if (level === 4) return 9; 
   }
 
   // Mostrar el problema actual
@@ -111,13 +108,14 @@ $(document).ready(function () {
 
   // Manejar respuesta incorrecta
   function handleIncorrectAnswer(problem, userAnswer) {
-      operationsList.push({
+      if (currentProblem < problems.length) {
+        operationsList.push({
         text: `${problem.x} x ${problem.y} = ${userAnswer} (Correcta: ${problem.correctAnswer})`,
         correct: false
       });
       currentProblem++;
       showProblem();
-  }
+  }}
 
   // Actualizar la lista de operaciones
   function updateOperationsList() {
