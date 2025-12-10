@@ -33,7 +33,7 @@ $(document).ready(function () {
   // Generar problemas según el nivel seleccionado
   function generateProblems(level) {
     var aleatorio = level;
-    for (let i = 0; i < 5; i++) {     // Poner aquí número de operaciones
+    for (let i = 0; i < 100; i++) {     // Poner aquí número de operaciones
      if (aleatorio === 5)
       {  level = (Math.floor(Math.random() * 2) + 1)*2  }; // Termino multiplicando por 2 para que aleatorice 2 o 4
       let x = generateIntegerX(level);
